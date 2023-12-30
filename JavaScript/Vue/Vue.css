@@ -1,0 +1,7 @@
+.v-entaer-active,v-leave-active{
+    transition: opacity 1s;
+}
+
+.v-entaer,.v-leave-to{
+    opacity: 0;
+}
