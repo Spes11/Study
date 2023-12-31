@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link rel="main.css" href="stylsheet" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- DOMのtextContentプロパティにバインド -->
+      <div v-bind:text-content.prop="message"></div>
+      <!-- DOMのscrollTopプロパティにバインド -->
+      <div v-bind:scroll-top.prop="scroll"></div>
+      <!-- countプロパテを表示する -->
+      <p>{{count}} 回クリックしたよ！</p>
+      <!-- このボタンをクリックするとincrementメソッドが呼び出される -->
+      <button v-on:click="increment">カウントを増やす</button>
+      <!-- クラスとスタイルのデータバインディング -->
+      <p v-bind:class="{child:isChild,'is-active':isActive}">Text</p>
+      <p v-bind:style="{color:textColor,backgroundColor:bgColor}">Text</p>
+      <!-- プレーンな属性と一緒にした場合 
+       v-bindが優先される -->
+      <p class="child" v-bind:class="{'is-active':isActive}">Text</p>
+      <p v-bind:style="{color:textColor}" style="color: blue">Text</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
