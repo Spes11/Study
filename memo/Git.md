@@ -44,4 +44,18 @@ Upstreamブランチが設定されていない場合、Gitは特定のリモー
 下記コマンドを入力
 >git push --set-upstream origin main
 
+<br>
+
+# 起動時のディレクトリ（ホームディレクトリ）の変更
+### 1.タスクバーにピン止めしている場合
+C:\Users\ユーザ名\AppData\Roaming\Microsoft\InternetExplorer\Quick Launch\User Pinned\TaskBar
+
+プロパティから「作業フォルダー」をホームディレクトリに設定したいパスを設定する。
+
+### 2.していない場合
+1.Git bashを起動<br>
+2.「.bash_profile」の有無を確認。ないなら作成<br>
+mkdir .bash_profile<br>
+3.「.bash_profile」をエディタで開き「ホームディレクトリに設定したいパスを記載」
+
 
