@@ -1,4 +1,6 @@
+package sample;
 
+//本を表すクラス
 public class Book {
 	private String name;
 
