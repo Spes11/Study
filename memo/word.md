@@ -144,4 +144,24 @@ HTML 中に処理コードを記述する。
 
 # MySQL Workbench
 
-Windows 上で動作する MySQL の管理ツール
+Windows 上で動作する MySQL の管理ツール<br>
+SQL クライアントツール（A5M2）
+
+# ドキュメントルート
+
+外部で公開するデータを格納するディレクトリ。<br>
+Next.js では「app」ディレクトリ直下
+
+# JSX（Java Script XML）
+
+JavaScript の拡張構文で、JS ファイル内に HTML のようなコードを記述できるようにするもの。
+
+# .ts 拡張子と .tsx 拡張子の違い
+
+- .ts
+
+  - 純粋な TypeScript のファイル
+  - JSX 要素の追加をサポートしない
+
+- .tsx 拡張子
+  - JSX を含む
