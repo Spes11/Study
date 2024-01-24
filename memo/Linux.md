@@ -37,7 +37,7 @@ drwxrwxrwx 2 root root 4096 Jan 11 22:46 dev
   - w=書き込み
   - x=実行
 
-# mkkdir -p
+# mkdir -p
 
 `mkdir -p` を使用すると、指定したディレクトリが存在しなくても、そのディレクトリとその親ディレクトリがすべて作成される。
 
