@@ -30,12 +30,6 @@ const 関数名 = function(引数) {
 }
 ```
 
-# 他のファイルを使用
-
-```JS
-export エクスポート対象
-```
-
 例 ①
 
 ```JS
@@ -65,3 +59,96 @@ import {関数名１}from"関数名１が定義されているファイル名"
 
 table data の略<br>
 テーブルセルの内容を指定
+
+# 関数リテラル
+
+### リテラル
+
+#### ● 特徴
+
+- ソースコードにべた書きした文字や数字
+  例
+
+```JS
+var name = "taro";
+var age = 18;
+//"taro" 18 がリテラル
+```
+
+### 関数リテラル
+
+#### ● 特徴
+
+- ソースコードにべた書きしたされた関数
+- JS では関数はデータ型のひとつ
+- 匿名関数、無名関数
+
+```JS
+let getTriangle = function(base,height){
+ return base * height / 2;
+};
+
+console.log('三角形の面積は' + getTriangle(10,2));//三角形の面積は10
+```
+
+# アロー関数
+
+基本構文
+
+```JS
+（引数,...）=> (関数の本体...)
+```
+
+例
+
+```JS
+let getTriangle = (base,height) => {
+ return base * height / 2;
+};
+
+console.log('三角形の面積は' + getTriangle(10,2));//三角形の面積は10
+```
+
+## 他の書き方
+
+- ### 1.関数の本体が 1 文である場合
+  - ブロックを表す{...}を省略できる
+  - return 文も省略可能
+
+```JS
+let getTriangle = (base,height) => base * height / 2;
+console.log('三角形の面積は' + getTriangle(10,2));//三角形の面積は10
+
+```
+
+- ### 2.引数が１つの場合
+  - 引数をくくる（）を省略できる
+
+```JS
+let getCircle = redius => redius * redius * / 2;
+console.log('三角形の面積は' + getTriangle(10,2));//三角形の面積は10
+
+```
+
+- ### 3.引数が無い場合
+  - 引数がない場合は()を省略せず記述します
+
+```JS
+let show =()=> console.log("Hello,world!")
+show();//Hello,world!
+
+```
+
+# Array.prototype.map()
+
+与えられた関数を配列のすべてに対して呼び出す。
+
+```JS
+const array1 = [1, 4, 9, 16];
+
+// Pass a function to map
+const map1 = array1.map((x) => x * 2);
+
+console.log(map1);
+// Expected output: Array [2, 8, 18, 32]
+```
