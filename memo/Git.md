@@ -1,3 +1,8 @@
+# 知識
+
+- ### HEAD
+  現在のリポジトリの位置
+
 # 設定確認
 
 ### email を確認
@@ -12,19 +17,15 @@ git config user.email
 git config user.name
 ```
 
-<br>
-
 # 設定変更
 
-> git config --global user.<設定変更したいもの><br>
+> git config --global user.<設定変更したいもの>
 
-例：username を変更する<br>
+例：username を変更する
 
 ```bash
 git config --global user.name
 ```
-
-<br>
 
 # エラー
 
@@ -45,7 +46,7 @@ upstream, see 'push.autoSetupRemote' in 'git help config'.
 
 ### 原因
 
-Git で現在のブランチがリモートリポジトリに対応する上流ブランチ（upstream branch）を持っていない場合に表示される<br>
+Git で現在のブランチがリモートリポジトリに対応する上流ブランチ（upstream branch）を持っていない場合に表示される
 
 #### 「upstream branch」（上流ブランチ）とは
 
@@ -63,8 +64,6 @@ Upstream ブランチが設定されていない場合、Git は特定のリモ�
 git push --set-upstream origin main
 ```
 
-<br>
-
 # 起動時のディレクトリ（ホームディレクトリ）の変更
 
 ### 1.タスクバーにピン止めしている場合
@@ -75,5 +74,5 @@ C:\Users\ユーザ名\AppData\Roaming\Microsoft\InternetExplorer\Quick Launch\Us
 
 ### 2.していない場合
 
-1.Git bash を起動<br> 2.「.bash_profile」の有無を確認。ないなら作成<br>
-mkdir .bash_profile<br> 3.「.bash_profile」をエディタで開き「ホームディレクトリに設定したいパスを記載」
+1.Git bash を起動 2.「.bash_profile」の有無を確認。ないなら作成  
+mkdir .bash_profile 3.「.bash_profile」をエディタで開き「ホームディレクトリに設定したいパスを記載」

@@ -57,7 +57,7 @@ import {関数名１}from"関数名１が定義されているファイル名"
 
 # td タグ
 
-table data の略<br>
+table data の略  
 テーブルセルの内容を指定
 
 # 関数リテラル
