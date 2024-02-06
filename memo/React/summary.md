@@ -120,3 +120,107 @@ const logCompliment = function(){
 
 logComplimet();
 ```
+
+- ### 関数の引数
+  任意の値を関数の引数として渡すことができる。  
+  複数の引数を設定可能。
+
+```js
+const hey = function (name, amimal) {
+  alert(`hey! ${name},${animal}`);
+};
+
+hey("タナカタロウ", "ポチ");
+```
+
+- ### 関数の戻り値
+
+  関数に戻り値を設定することができる。
+
+```js
+let name = "ごりら";
+let message = "バナナが好物。";
+
+const hey = function (name, message) {
+  return `${name}は${message}`;
+};
+
+//ごりらはバナナが好物。
+console.log(hey(name, message));
+```
+
+## デフォルト引数
+
+関数呼び出し時に引数が与えら無かった場合のデフォルト値を記述できる。  
+引数を設定して呼び出すと、設定した引数が使用される。
+
+```JS
+function logActive(name = "Shane McConkey", activity = "sking") {
+  console.log(`${name}loves${activity}`);
+}
+//Shane McConkeylovessking
+logActive();
+//タナカloves料理
+logActive("タナカ", "料理");
+
+const defaultPerson = {
+  name: {
+    first: "Shane",
+    last: "McConkey",
+  },
+  favActivty: "sking",
+};
+function logActivity(person = defaultPerson) {
+  console.log(`${person.name.first} loves ${person.favActivty}`);
+}
+//Shane loves sking
+logActivity();
+```
+
+## アロー関数
+
+`funcrion`や`return`文無しで関数を記述できる。
+
+```JS
+// 非アロー関数
+const lordify = function (fistName) {
+  return `${firstName} of Canterbury`;
+};
+
+// Dale of Centerbury
+console.log(lordify("Dale"));
+// Gail of Centerbury
+console.log(lordify("Gail"));
+
+
+// アロー関数
+const lordify = function (firstName, land) {
+  return `${firstName} of ${land}`;
+};
+// Dail of CenterBury
+console.log(lordify("Dail", "Centerbury"));
+
+// インラインで記述
+// 引数が１つの場合引数を囲む（）を省略できるが複数ある場合は省略不可。
+const lordify = (firstName, land) => `${firstName} of ${land}`;
+
+console.log(lordify("Dail", "Centerbury"));
+
+```
+
+## オブジェクトの返却
+
+アロー関数をインラインで記述するときには、戻り値のオブジェクトをかっこで囲む。
+
+```JS
+const person = (fistName, lastName) => ({
+  first: firstName,
+  last: lastName,
+});
+
+console.log("Bard", "Janosn");
+```
+
+## アロー関数とスコープ
+
+アロー関数は独自のスコープを持たない。
