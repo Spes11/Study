@@ -224,3 +224,126 @@ console.log("Bard", "Janosn");
 ## アロー関数とスコープ
 
 アロー関数は独自のスコープを持たない。
+
+```js
+const tahoe = {
+  mountains: ["Freel", "Rose", "Tallac", "Rubicon", "Silver"],
+  print: function (delay = 1000) {
+    setTimeout(function () {
+      console.log(this.mountains.join(", "));
+    }, delay);
+  },
+};
+// Uncaught TypeError: Cannot read properties of undefined (reading 'join')
+tahoe.print();
+```
+
+```js
+const tahoe = {
+  mountains: ["Freel", "Rose", "Tallc", "Rubicon", "Silber"],
+  print: function (delay = 1000) {
+    setTimeout(() => {
+      console.log(this.mountains.join(", "));
+    }, delay);
+  },
+};
+// Freel, Rose, Tallc, Rubicon, Silber
+tahoe.print();
+```
+
+## JavaScript のコンパイル
+
+新しい構文で記述されたコードを、古い構文に変換すること。
+Babel
+
+## オブジェクトと配列
+
+### デストラクチャリング
+
+オブジェクトを分解する。  
+使用する際は、渡すプロパティを`{}`で囲む。
+
+```JS
+const sandwich = {
+  bread: "dutch crunch",
+  meat: "tuna",
+  cheese: "swiss",
+  topping: ["lettice", "tomato", "mustard"],
+};
+
+let { bread, meat } = sandwich;
+bread = "garlic";
+meat = "turkey";
+
+// garlic turkey
+console.log(bread, meat);
+// dutch crunch tuna
+console.log(sandwich.bread, sandwich.meat);
+```
+
+関数の引数にも適用可能。
+
+```JS
+// デストラクチャリング未使用
+const lordify = (regularPerson) => {
+  console.log(`${regularPerson.firstname} of Canterbury`);
+};
+
+const regularPerson = {
+  firstname: "Bill",
+  lastname: "Wilson",
+};
+
+// Bill of Canterbury
+lordify(regularPerson);
+
+// デストラクチャリング使用
+const lordify2 = ({ firstname }) => {
+  console.log(`${firstname}of Canterbury`);
+};
+
+const regularPerson2 = {
+  firstname: "Bill",
+  lastname: "Wilson",
+};
+
+// Bill of Canterbury
+lordify2(regularPerson2);
+
+```
+
+オブジェクトの深いレベルのプロパティも選択することができる。
+
+```JS
+const lordify = ({ sponse: { firstname } }) => {
+  console.log(`${firstname} of Canterbury`);
+};
+
+const regularPerson = {
+  firstname: "Bill",
+  lastname: "Wilson",
+  sponse: {
+    firstname: "Phil",
+    lastname: "Wilson",
+  },
+};
+
+// Phil of Canterbury
+lordify(regularPerson);
+```
+
+## 配列のデストラクチャリング
+
+配列にも適用可能。
+スプレット構文と組み合わせて使われる事が多い。
+
+```JS
+const [firstAnimal] = ["Horse", "Mouse", "Cat"];
+// Horse
+console.log(firstAnimal);
+
+const [, , thirdAnimal] = ["Horse", "Mouse", "Cat"];
+// Cat
+console.log(thirdAnimal);
+
+```
